@@ -41,6 +41,6 @@ test-script.sh を利用すると再現可能
 ## このレポジトリの各ファイルについて
 
 - [テストスクリプト](./test-script.sh)
-- [kernel 4.2.1 の環境での sysfs などの情報](env-4.2.1.log.md)
+- [kernel 4.2.1 の環境での sysfs などの情報](./info-4.2.1.log.md)
 - [debug on の時のログ](./debug-log.md)
 - [コードリーディングのメモ](./code-reading-memo.md)
