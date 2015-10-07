@@ -22,12 +22,12 @@ layer01
 mount -t aufs -o br:layer04=rw:layer03=ro+wh:layer02=ro+wh:layer01=ro+wh none ./merge
 ```
 
-**layer01** を一番下にしてその上に **layer02**、さらにその上に **layer03**、そして最後に **layer04** が書き込みされた情報が保存されるディレクトリとなる。
+**layer01** を一番下にしてその上に **layer02**、さらにその上に **layer03**、そして最後に **layer04** が書き込み可能でマウントしている。
 つまり、この場合、`ls -l merge` すると **layer03/foo** がみえる。
 
 そこで、`touch merge/foo` する。こうすると、**layer03/foo** が **layer04/foo** にコピーされた後に日付が更新される。
 
-そして、つづいて `rm -rf merge/foo` する。こうすると、**layer04/foo** が削除され同時に **layer04/..wh.foo** (whiteoutファイル) が作成されるのが正しいように考えられるが、whiteout が出来上がらない現象が発生
+つづいて `rm -rf merge/foo` する。こうすると、**layer04/foo** が削除され同時に **layer04/..wh.foo** (whiteoutファイル) が作成されるのが正しいように考えられるが、whiteout が出来上がらない現象が発生
 
 ## 検証環境
 
