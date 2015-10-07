@@ -7,13 +7,14 @@
 以下の様なディレクトリ
 
 ```
-layer04
-layer03
-`- foo （ディレクトリ）
-layer02
-`- ..wh.foo （foo が削除されているということを管理する aufs のシステムファイル = whiteout ファイル）
-layer01
-`- foo （ディレクトリ）
+/
+`-layer04
+`-layer03
+  `- foo （ディレクトリ）
+`-layer02
+  `- ..wh.foo （foo が削除されているということを管理する aufs のシステムファイル = whiteout ファイル）
+`-layer01
+  `- foo （ディレクトリ）
 ```
 
 これらを aufs でマウントする（layer04ディレクトリは書き込み可能とする）
